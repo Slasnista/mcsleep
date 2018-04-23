@@ -34,7 +34,7 @@ params.meanEnvelope = 0;
 params.desiredChannel = 4;
 
 % Other function parameters
-params.channels = channels;
+% params.channels = channels;
 params.plot = 0;
 params.epoch = 1;
 params.calculateCost = 1;
