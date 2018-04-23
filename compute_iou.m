@@ -31,14 +31,4 @@ area_b = pred_ends - pred_starts;
 
 iou = inter_area ./ (area_a + area_b - inter_area);
 
-% % evaluate starts / ends / durations
-% pred_starts_ends = pred(1, 2:end) - pred(1, 1:end - 1);
-
-% idx_starts = find(pred_starts_ends==1);
-% idx_ends = find(pred_starts_ends==-1);
-
-% starts = idx_starts / sfreq;
-% ends = idx_ends / sfreq;
-% durations = ends - starts;
-
 end
