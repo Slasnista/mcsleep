@@ -44,17 +44,17 @@ Threshold_grid = [0.5];
 
 % Grid search
 file_name='/infres/ir610/users/schambon/Papers/mcsleep/data/SS2/mcsleep/01-02-0009.mat';
-[f1_scores, Pr_scores, Re_scores, F, S] = hp_selection(file_name, lam3_grid, Threshold_grid)
+metrics = hp_selection(file_name, lam3_grid, Threshold_grid)
 
-% hp selection
-[m, idx] = max(scores(:))
-[maxval, maxidx] = max(scores);
+% % hp selection
+% [m, idx] = max(scores(:))
+% [maxval, maxidx] = max(scores);
 
-F_ = F(:);
-S_ = S(:);
-best_lam3 = F_(1, idx);
-best_Threshold = S_(1, idx);
+% F_ = F(:);
+% S_ = S(:);
+% best_lam3 = F_(1, idx);
+% best_Threshold = S_(1, idx);
 
-% prediction on test record
-file_name='/infres/ir610/users/schambon/Papers/mcsleep/data/SS2/mcsleep/01-02-0019.mat';
-[f1, Pr, Re] = prediction_test(file_name, best_lam3, best_Threshold)
+% % prediction on test record
+% file_name='/infres/ir610/users/schambon/Papers/mcsleep/data/SS2/mcsleep/01-02-0019.mat';
+% [f1, Pr, Re] = prediction_test(file_name, best_lam3, best_Threshold)
