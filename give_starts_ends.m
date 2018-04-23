@@ -1,4 +1,4 @@
-function [starts, ends, durations] = give_starts_ends(pred)
+function [starts, ends, durations] = give_starts_ends(pred, sfreq)
 
 % evaluate starts / ends / durations
 pred_starts_ends = pred(1, 2:end) - pred(1, 1:end - 1);
