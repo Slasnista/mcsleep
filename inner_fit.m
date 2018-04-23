@@ -4,7 +4,7 @@ function f1 = inner_fit(params, lam3, Threshold)
 
 	p = parpool('local', 12); 
 	pred = analyzeSpindles(params);
-	f1 = compute_f1(params.label, pred, params.sfreq, params.iou_th);
+	[f1, Pr, Re] = compute_f1(params.label, pred, params.sfreq, params.iou_th);
 
 	delete(gcp('nocreate'))
 

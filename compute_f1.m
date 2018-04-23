@@ -1,4 +1,4 @@
-function f1 = compute_f1(label, pred, sfreq, iou_th)
+function [f1, Pr, Re] = compute_f1(label, pred, sfreq, iou_th)
 
 [pred_starts, pred_ends, pred_durations] = give_starts_ends(pred, sfreq);
 [true_starts, true_ends, true_durations] = give_starts_ends(label, sfreq);
