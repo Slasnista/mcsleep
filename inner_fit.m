@@ -1,4 +1,4 @@
-function f1 = inner_fit(params, lam3, Threshold)
+function [f1, Pr, Re] = inner_fit(params, lam3, Threshold)
 	params.lam3 = lam3;
 	params.Threshold = Threshold
 
