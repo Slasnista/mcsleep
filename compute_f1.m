@@ -1,4 +1,4 @@
-function [f1, Pr, Re] = compute_f1(label, pred, sfreq)
+function metrics = compute_f1(label, pred, sfreq)
 
 [pred_starts, pred_ends, pred_durations] = give_starts_ends(pred, sfreq);
 [true_starts, true_ends, true_durations] = give_starts_ends(label, sfreq);
@@ -12,9 +12,10 @@ iou_ths = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
 Pr = zeros(1, 10);
 Re = zeros(1, 10);
 f1 = zeros(1, 10);
-for i=1:length(iou_th)
+for i=1:length(iou_ths)
 
-
+	iou_th = iou_ths(1, i)
+end
 	n_match = sum(sum(double(iou >= iou_th)));
 
 	n_pos = iou_shape(1, 2);
@@ -24,5 +25,10 @@ for i=1:length(iou_th)
 	Re(1, i) = n_match / n_rel;
 
 	f1(1, i) = 2 * (Re * Pr) / (Re + Pr);
+
+metrics.precision = Pr;
+metrics.recall = Re;
+metrics.f1 = f1;
+metrics.iou_th = iou_ths
 
 end

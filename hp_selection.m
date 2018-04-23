@@ -1,4 +1,4 @@
-function [f1_scores, Pr_scores, Re_scores, F, S] = hp_selection(file_name, lam3, Threshold)
+function metrics = hp_selection(file_name, lam3, Threshold)
 
 load(file_name);
 
@@ -50,6 +50,6 @@ params.Threshold = 1.5;
 
 % grid search
 [F,S] = ndgrid(lam3, Threshold);
-[f1_scores, Pr_scores, Re_scores] = arrayfun(@(p1, p2) inner_fit(params, p1, p2), F, S);
+metrics = arrayfun(@(p1, p2) inner_fit(params, p1, p2), F, S);
 
 end

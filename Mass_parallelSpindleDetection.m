@@ -40,7 +40,7 @@ path = 'data/SS2/';
 % Threshold = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0];
 
 lam3_grid = [45];
-Threshold_grid = [0.5, 1.0];
+Threshold_grid = [0.5];
 
 % Grid search
 file_name='/infres/ir610/users/schambon/Papers/mcsleep/data/SS2/mcsleep/01-02-0009.mat';
