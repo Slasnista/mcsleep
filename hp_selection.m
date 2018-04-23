@@ -1,4 +1,4 @@
-function [scores, F, S] = hp_selection(file_name, lam, Threshold)
+function [scores, F, S] = hp_selection(file_name, lam3, Threshold)
 
 load(file_name);
 
