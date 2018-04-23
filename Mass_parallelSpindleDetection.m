@@ -44,7 +44,7 @@ Threshold_grid = [0.5, 1.0];
 
 % Grid search
 file_name='/infres/ir610/users/schambon/Papers/mcsleep/data/SS2/mcsleep/01-02-0009.mat';
-[scores, F, S] = hp_selection(file_name, lam3_grid, Threshold_grid)
+[f1_scores, Pr_scores, Re_scores, F, S] = hp_selection(file_name, lam3_grid, Threshold_grid)
 
 % hp selection
 [m, idx] = max(scores(:))
