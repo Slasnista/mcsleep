@@ -12,10 +12,10 @@ iou_ths = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
 precision_tab = zeros(1, 10);
 recall_tab = zeros(1, 10);
 f1_tab = zeros(1, 10);
+
 for i=1:length(iou_ths)
 
 	iou_th = iou_ths(1, i)
-end
 	n_match = sum(sum(double(iou >= iou_th)));
 
 	n_pos = iou_shape(1, 2);
@@ -34,5 +34,7 @@ metrics.precision = precision_tab;
 metrics.recall = recall_tab;
 metrics.f1 = f1_tab;
 metrics.iou_th = iou_ths
+
+end
 
 end
