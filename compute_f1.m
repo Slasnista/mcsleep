@@ -48,9 +48,12 @@ sizes = size(a)
 
 n_match = sizes(1, 2);
 
-metrics.by_sample_precision = n_match / n_pos;
-metrics.by_sample_recall = n_match / n_rel;
-metrics.by_sample_f1 = 2 * (by_sample_recall * by_sample_precision) / (by_sample_recall + by_sample_precision);
+by_sample_precision = n_match / n_pos;
+by_sample_recall = n_match / n_rel;
+by_sample_f1 = 2 * (by_sample_recall * by_sample_precision) / (by_sample_recall + by_sample_precision);
 
+metrics.by_sample_precision = by_sample_precision;
+metrics.by_sample_recall = by_sample_recall;
+metrics.by_sample_f1 = by_sample_f1;
 
 end
