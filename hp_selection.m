@@ -52,7 +52,4 @@ params.Threshold = 1.5;
 [F,S] = ndgrid(lam3, Threshold);
 metrics = arrayfun(@(p1, p2) inner_fit(params, p1, p2), F, S);
 
-metrics.lam3 = F;
-metrics.Threshold = S;
-
 end
