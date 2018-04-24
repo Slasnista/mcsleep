@@ -13,7 +13,7 @@ Threshold_grid = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0];
 path = 'data/SS2/mcsleep';
 fil=fullfile(path,'*.mat')
 d=dir(fil)
-scores = {};
+% scores = {};
 for k=1:numel(d)	
 	file_name=fullfile(path,d(k).name)
 
@@ -23,12 +23,12 @@ for k=1:numel(d)
 	b = a{1, end};
 	c = strsplit(b, '.');
 
-	for i = 1:length(metrics)
-		metrics(1, i).record = c{1, 1}
-	end
+	% for i = 1:length(metrics)
+	% 	metrics(1, i).record = c{1, 1}
+	% end
 
-	save(['scores/scores_' c{1, 1} '.mat'], 'metrics')
-	scores{1, k} = metrics
+	save(['scores/parekh_2017/' c{1, 1} '.mat'], 'metrics')
+	% scores{1, k} = metrics
 end
 
-save(['scores/scores.mat'], 'scores')
+% save(['scores/scores.mat'], 'scores')

@@ -33,7 +33,7 @@ for i=1:length(iou_ths)
 
 	precision_tab(1, i) = Pr;
 	recall_tab(1, i) = Re;
-	f1_tab(1, i) = f1
+	f1_tab(1, i) = f1;
 end
 
 metrics.precision = precision_tab;
