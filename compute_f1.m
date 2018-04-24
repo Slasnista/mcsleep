@@ -29,12 +29,28 @@ for i=1:length(iou_ths)
 	precision_tab(1, i) = Pr;
 	recall_tab(1, i) = Re;
 	f1_tab(1, i) = f1
+end
 
 metrics.precision = precision_tab;
 metrics.recall = recall_tab;
 metrics.f1 = f1_tab;
 metrics.iou_th = iou_ths
 
-end
+
+% by sample metrics
+n_pos = sum(pred);
+n_rel = sum(label);
+
+y_match = label + pred;
+
+a = find(y_match == 2);
+sizes = size(a)
+
+n_match = sizes(1, 2);
+
+metrics.by_sample_precision = n_match / n_pos;
+metrics.by_sample_recall = n_match / n_rel;
+metrics.by_sample_f1 = 2 * (by_sample_recall * by_sample_precision) / (by_sample_recall + by_sample_precision);
+
 
 end
