@@ -16,7 +16,12 @@ f1_tab = zeros(1, 9);
 for i=1:length(iou_ths)
 
 	iou_th = iou_ths(1, i)
-	n_match = sum(sum(double(iou >= iou_th)));
+
+	count = double(iou >= iou_th);
+	count_ = sum(count, 2);
+	count__ = find(count_ > 0);
+	sizes = size(count__);
+	n_match = sizes(1, 1);
 
 	n_pos = iou_shape(1, 2);
 	n_rel = iou_shape(1, 1);
@@ -34,7 +39,7 @@ end
 metrics.precision = precision_tab;
 metrics.recall = recall_tab;
 metrics.f1 = f1_tab;
-metrics.iou_th = iou_ths
+metrics.iou_th = iou_ths;
 
 
 % by sample metrics
@@ -44,7 +49,7 @@ n_rel = sum(label);
 y_match = label + pred;
 
 a = find(y_match == 2);
-sizes = size(a)
+sizes = size(a);
 
 n_match = sizes(1, 2);
 
@@ -55,5 +60,19 @@ by_sample_f1 = 2 * (by_sample_recall * by_sample_precision) / (by_sample_recall 
 metrics.by_sample_precision = by_sample_precision;
 metrics.by_sample_recall = by_sample_recall;
 metrics.by_sample_f1 = by_sample_f1;
+
+end
+
+function [starts, ends, durations] = give_starts_ends(pred, sfreq)
+
+% evaluate starts / ends / durations
+pred_starts_ends = pred(1, 2:end) - pred(1, 1:end - 1);
+
+idx_starts = find(pred_starts_ends==1);
+idx_ends = find(pred_starts_ends==-1);
+
+starts = idx_starts / sfreq;
+ends = idx_ends / sfreq;
+durations = ends - starts;
 
 end
