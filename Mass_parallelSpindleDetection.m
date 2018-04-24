@@ -18,7 +18,6 @@ for k=1:numel(d)
 	file_name=fullfile(path,d(k).name)
 
 	% Grid search
-	file_name='/infres/ir610/users/schambon/Papers/mcsleep/data/SS2/mcsleep/01-02-0009.mat';
 	metrics = hp_selection(file_name, lam3_grid, Threshold_grid)
 	a = strsplit(file_name, '/');
 	b = a{1, end};
@@ -28,9 +27,8 @@ for k=1:numel(d)
 		metrics(1, i).record = c{1, 1}
 	end
 
+	save(['scores/scores_' c{1, 1} '.mat'], 'metrics')
 	scores{1, k} = metrics
-
-	save('scores/scores.mat', 'scores')
-
 end
 
+save(['scores/scores.mat'], 'scores')

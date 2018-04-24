@@ -9,9 +9,9 @@ iou_shape = size(iou);
 
 iou_ths = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
 
-precision_tab = zeros(1, 10);
-recall_tab = zeros(1, 10);
-f1_tab = zeros(1, 10);
+precision_tab = zeros(1, 9);
+recall_tab = zeros(1, 9);
+f1_tab = zeros(1, 9);
 
 for i=1:length(iou_ths)
 
