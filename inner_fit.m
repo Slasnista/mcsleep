@@ -17,5 +17,7 @@ function [metrics, metrics_n2] = inner_fit(params, lam3, Threshold)
   	pred_n2(idx_non_n2) = 0;
 
   	metrics_n2 = compute_f1(label_n2, pred_n2, params.sfreq)
+  	metrics_n2.lam3 = lam3;
+  	metrics_n2.Threshold = Threshold;
 
 end
