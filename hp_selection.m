@@ -1,7 +1,8 @@
-function metrics = hp_selection(file_name, lam3, Threshold)
+function [metrics, metrics_n2] = hp_selection(file_name, lam3, Threshold)
 
 load(file_name);
 
+sfreq = 256;
 fs = sfreq;
 
 Y = zeros(6, size(c3,2));
@@ -45,11 +46,14 @@ params.data = 0;
 
 params.label = label;
 params.sfreq = sfreq;
+params.N2 = N2
 params.iou_th = 0.3;
 params.Threshold = 1.5;
 
 % grid search
 [F,S] = ndgrid(lam3, Threshold);
-metrics = arrayfun(@(p1, p2) inner_fit(params, p1, p2), F, S);
+[metrics, metrics_n2] = arrayfun(@(p1, p2) inner_fit(params, p1, p2), F, S);
+
+
 
 end

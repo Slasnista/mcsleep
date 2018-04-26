@@ -25,7 +25,7 @@ for k=1:numel(d)
 
 	% Grid search
 
-	metrics = hp_selection(file_name, lam3_grid, Threshold_grid)
+	[metrics, metrics_n2] = hp_selection(file_name, lam3_grid, Threshold_grid)
 
 	a = strsplit(file_name, '/');
 	b = a{1, end};
@@ -35,7 +35,8 @@ for k=1:numel(d)
 	% 	metrics(1, i).record = c{1, 1}
 	% end
 
-	save(['scores/parekh_2017/' c{1, 1} '.mat'], 'metrics')
+	save(['scores/parekh_2017/metrics_' c{1, 1} '.mat'], 'metrics')
+	save(['scores/parekh_2017/metrics_N2_' c{1, 1} '.mat'], 'metrics_n2')
 	% scores{1, k} = metrics
 end
 
