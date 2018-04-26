@@ -8,20 +8,16 @@ warning('off','all')
 p = parpool('local', 12); 
 
 % param grid
-% lam3_grid = [45, 46, 47, 48];
-% Threshold_grid = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0];
-
-lam3_grid = [45];
-Threshold_grid = [0.5];
-
+lam3_grid = [45, 46, 47, 48];
+Threshold_grid = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0];
 
 % loop over record
-path = 'data/SS2/mcsleep';
-fil=fullfile(path,'*.mat')
+PATH = '/home/infres/schambon/Papers/mcsleep/data/mat_files/';
+fil=fullfile(PATH,'*.mat')
 d=dir(fil)
 % scores = {};
 for k=1:numel(d)	
-	file_name=fullfile(path,d(k).name)
+	file_name=fullfile(PATH,d(k).name)
 
 	% Grid search
 
