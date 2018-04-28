@@ -80,7 +80,7 @@ scores.to_csv("scores/wendt_2012.csv")
 path = "scores/parekh_2017/"
 files = sorted(
     [os.path.join(path, f_) for f_ in os.listdir(path)
-     if f_.startswith("metrics_N2")])
+     if f_.startswith("metrics_0")])
 
 scores = []
 for sf in files:
@@ -114,6 +114,7 @@ for sf in files:
             s["lam3"] = lam3.squeeze()
             s["threshold"] = threshold.squeeze()
             s["record"] = record
+            s["evaluation"] = "record"
 
             scores.append(s)
 
@@ -153,9 +154,9 @@ for sf in files:
             s["lam3"] = lam3.squeeze()
             s["threshold"] = threshold.squeeze()
             s["record"] = record
+            s["evaluation"] = "N2"
 
             scores.append(s)
-
 
 scores = pd.concat(scores)
 scores.to_csv("scores/parekh_2017.csv")
