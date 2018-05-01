@@ -14,7 +14,7 @@ lam3_grid = [45];
 Threshold_grid = [0.5];
 
 % loop over record
-PATH = '/home/infres/schambon/Papers/mcsleep/data/mat_files/';
+PATH = '/home/infres/schambon/Papers/mcsleep/data/mat_gold_standard/';
 fil=fullfile(PATH,'*.mat')
 d=dir(fil)
 % scores = {};

@@ -46,8 +46,8 @@ params.data = 0;
 
 params.E1 = E1;
 params.E2 = E2;
-params.union = union;
-params.intersection = intersection;
+params.union = Union;
+params.intersection = Intersection;
 
 params.sfreq = sfreq;
 params.N2 = N2
