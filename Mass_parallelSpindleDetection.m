@@ -1,6 +1,6 @@
 % loop over all records and all parameters
 % hp selection is performed in a second phase
-function Mass_parallelSpindleDetection()
+// function Mass_parallelSpindleDetection()
 
 format long g
 warning('off','all')
@@ -39,4 +39,4 @@ end
 
 delete(gcp('nocreate'))
 
-end
+// end
