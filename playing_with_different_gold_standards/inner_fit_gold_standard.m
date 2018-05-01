@@ -4,21 +4,21 @@ function [metrics_E1, metrics_E2, metrics_union, metrics_intersection] = inner_f
 
 	pred = analyzeSpindles(params);
 
-	f1_E1 = compute_f1(params.E1, pred, params.sfreq)
-	f1_E2 = compute_f1(params.E2, pred, params.sfreq)
-	f1_union = compute_f1(params.union, pred, params.sfreq)
-	f1_intersection = compute_f1(params.intersection, pred, params.sfreq)
+	metrics_E1 = compute_f1(params.E1, pred, params.sfreq)
+	metrics_E2 = compute_f1(params.E2, pred, params.sfreq)
+	metrics_union = compute_f1(params.union, pred, params.sfreq)
+	metrics_intersection = compute_f1(params.intersection, pred, params.sfreq)
 
-	f1_E1.lam3 = lam3;
-	f1_E1.Threshold = Threshold;
+	metrics_E1.lam3 = lam3;
+	metrics_E1.Threshold = Threshold;
 
-	f1_E2.lam3 = lam3;
-	f1_E2.Threshold = Threshold;
+	metrics_E2.lam3 = lam3;
+	metrics_E2.Threshold = Threshold;
 
-	f1_union.lam3 = lam3;
-	f1_union.Threshold = Threshold;
+	metrics_union.lam3 = lam3;
+	metrics_union.Threshold = Threshold;
 
-	f1_intersection.lam3 = lam3;
-	f1_intersection.Threshold = Threshold;
+	metrics_intersection.lam3 = lam3;
+	metrics_intersection.Threshold = Threshold;
 
 end
