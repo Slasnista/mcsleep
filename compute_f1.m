@@ -15,7 +15,7 @@ f1_tab = zeros(1, 9);
 
 for i=1:length(iou_ths)
 
-	iou_th = iou_ths(1, i)
+	iou_th = iou_ths(1, i);
 
 	count = double(iou >= iou_th);
 	count_ = sum(count, 2);
