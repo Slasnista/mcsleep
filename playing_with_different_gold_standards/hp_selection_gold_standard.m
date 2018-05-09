@@ -44,10 +44,10 @@ params.Entire = 0;
 params.ROC = 0;
 params.data = 0;
 
-params.E1 = E1;
-params.E2 = E2;
-params.union = Union;
-params.intersection = Intersection;
+params.E1 = f.E1;
+params.E2 = f.E2;
+params.union = f.Union;
+params.intersection = f.Intersection;
 params.sfreq = sfreq;
 
 %params.N2 = N2
