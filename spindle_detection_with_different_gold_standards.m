@@ -23,24 +23,24 @@ d=dir(fil)
 for k=1:numel(d)	
 	file_name=fullfile(PATH,d(k).name);
 
-	if k >= 9
+	%if k >= 9
 
-		disp(file_name)
-	% % Grid search
-		[metrics_E1, metrics_E2, metrics_union, metrics_intersection] = hp_selection_gold_standard(file_name, lam3_grid, Threshold_grid)
+	disp(file_name)
+% % Grid search
+	[metrics_E1, metrics_E2, metrics_union, metrics_intersection] = hp_selection_gold_standard(file_name, lam3_grid, Threshold_grid)
 
-		a = strsplit(file_name, '/');
-		b = a{1, end};
-		c = strsplit(b, '.');
+	a = strsplit(file_name, '/');
+	b = a{1, end};
+	c = strsplit(b, '.');
 
-		save(['scores/parekh_2017/gold_standard_metrics_E1_' c{1, 1} '.mat'], 'metrics_E1')
-		save(['scores/parekh_2017/gold_standard_metrics_E2_' c{1, 1} '.mat'], 'metrics_E2')
-		save(['scores/parekh_2017/gold_standard_metrics_union_' c{1, 1} '.mat'], 'metrics_union')
-		save(['scores/parekh_2017/gold_standard_metrics_intersection_' c{1, 1} '.mat'], 'metrics_intersection')
-	else
+	save(['scores/parekh_2017/gold_standard_metrics_E1_' c{1, 1} '.mat'], 'metrics_E1')
+	save(['scores/parekh_2017/gold_standard_metrics_E2_' c{1, 1} '.mat'], 'metrics_E2')
+	save(['scores/parekh_2017/gold_standard_metrics_union_' c{1, 1} '.mat'], 'metrics_union')
+	save(['scores/parekh_2017/gold_standard_metrics_intersection_' c{1, 1} '.mat'], 'metrics_intersection')
+	% else
 
-		disp('done')
-	end
+	% 	disp('done')
+	% end
 
 end
 

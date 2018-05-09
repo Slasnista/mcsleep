@@ -5,7 +5,7 @@ f = load(file_name);
 sfreq = 256;
 fs = sfreq;
 
-Y = zeros(6, size(c3,2));
+Y = zeros(6, size(f.c3,2));
 Y(1, :) = f.c3;
 Y(2, :) = f.c4;
 Y(3, :) = f.cz;
