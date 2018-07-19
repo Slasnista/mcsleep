@@ -10,7 +10,7 @@ addpath('/home/infres/schambon/Papers/mcsleep')
 format long g
 warning('off','all')
 
-p = parpool('local', 10);
+p = parpool('local', 20);
 
 % param grid
 lam3_grid = [10, 20, 30, 40, 50];
