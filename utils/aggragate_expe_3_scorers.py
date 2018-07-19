@@ -2,7 +2,7 @@ from scipy.io import loadmat
 import pandas as pd
 import os
 
-path = "scores/stanford/"
+path = "scores/stanford/no_resampling/SSC/"
 files = sorted(
     [os.path.join(path, f_) for f_ in os.listdir(path)
      if f_.startswith("consensus")])
