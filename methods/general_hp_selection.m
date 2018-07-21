@@ -1,4 +1,4 @@
-function metrics = general_hp_selection(file_name, lam3, Threshold, sfreq, lam1, lam2)
+function metrics = general_hp_selection(file_name, lam3, Threshold, sfreq)
 
 f = load(file_name);
 
@@ -11,8 +11,8 @@ N = size(Y,2);
 
 %% Try low pass filtering
 params.y = Y;
-% params.lam1 = 0.3;
-% params.lam2 = 6.5;
+params.lam1 = 0.3;
+params.lam2 = 6.5;
 % % params.lam3 = 45;
 % % params.Threshold = 40;
 % params.mu = 0.5;
