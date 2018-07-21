@@ -1,4 +1,4 @@
-function metrics = general_hp_selection(file_name, lam3, Threshold, sfreq)
+function metrics = general_hp_selection(file_name, lam3, Threshold, sfreq, lam1, lam2)
 
 f = load(file_name);
 
@@ -21,8 +21,8 @@ params.y = Y;
 % params.O = fs / 2;
 params.fs = sfreq;
 
-params.lam1 = 0.6;
-params.lam2 = 7;
+params.lam1 = lam1;
+params.lam2 = lam2;
 params.mu = 0.5;
 params.Nit = 40;
 params.K = sfreq;
