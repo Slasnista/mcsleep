@@ -1,4 +1,4 @@
-function metrics = general_hp_selection(file_name, lam3, Threshold, p)
+function metrics = general_hp_selection(file_name, lam3, Threshold, sfreq)
 
 f = load(file_name);
 
@@ -19,14 +19,14 @@ params.y = Y;
 % params.Nit = 50;
 % params.K = fs;
 % params.O = fs / 2;
-params.fs = 256;
+params.fs = sfreq;
 
 params.lam1 = 0.6;
 params.lam2 = 7;
 params.mu = 0.5;
 params.Nit = 40;
-params.K = 256;
-params.O = 128;
+params.K = sfreq;
+params.O = sfreq / 2;
 
 % Bandpass filter & Teager operator parameters
 params.f1 = 11;
@@ -46,7 +46,7 @@ params.ROC = 0;
 params.data = 0;
 
 params.scorer = f.spindle;
-params.sfreq = 256;
+params.sfreq = sfreq;
 
 % grid search
 [F,S] = ndgrid(lam3, Threshold);
