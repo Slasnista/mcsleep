@@ -21,8 +21,8 @@ params.lam2 = 6.5;
 % params.O = fs / 2;
 params.fs = sfreq;
 
-params.lam1 = lam1;
-params.lam2 = lam2;
+// params.lam1 = lam1;
+// params.lam2 = lam2;
 params.mu = 0.5;
 params.Nit = 40;
 params.K = sfreq;
