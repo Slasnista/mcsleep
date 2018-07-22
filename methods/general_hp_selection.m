@@ -11,8 +11,8 @@ N = size(Y,2);
 
 %% Try low pass filtering
 params.y = Y;
-% params.lam1 = 0.3;
-% params.lam2 = 6.5;
+params.lam1 = 0.3;
+params.lam2 = 6.5;
 % % params.lam3 = 45;
 % % params.Threshold = 40;
 % params.mu = 0.5;
@@ -21,8 +21,6 @@ params.y = Y;
 % params.O = fs / 2;
 params.fs = sfreq;
 
-params.lam1 = 0.6;
-params.lam2 = 7;
 params.mu = 0.5;
 params.Nit = 40;
 params.K = sfreq;
